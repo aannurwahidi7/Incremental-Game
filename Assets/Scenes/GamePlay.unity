@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 637627521}
   - component: {fileID: 637627520}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -643,7 +643,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Achievement Description
+  m_Text: Description
 --- !u!222 &637627521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 929367854}
   - component: {fileID: 929367853}
   m_Layer: 5
-  m_Name: Header
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -794,7 +794,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Achievement Unlocked!
+  m_Text: Title
 --- !u!222 &929367854
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.058564663, a: 1}
+  m_Color: {r: 0.13725491, g: 0.22352941, b: 0.35686275, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -893,21 +893,168 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _popUpTransform: {fileID: 997504088}
-  _popUpText: {fileID: 637627520}
+  _popUpTitle: {fileID: 929367853}
+  _popUpDesc: {fileID: 637627520}
   _popUpShowDuration: 3
   _achievementList:
-  - Title: Unlock Intern
+  - Title: Click
+    Description: Anda Adalah Pemula
+    Type: 0
+    Value: Click
+    IsUnlocked: 0
+  - Title: Intern
+    Description: Sekarang Anda adalah anak magang
     Type: 0
     Value: Intern
     IsUnlocked: 0
-  - Title: Unlock Developer
+  - Title: Developer
+    Description: Sekarang Anda adalah Developer
     Type: 0
     Value: Developer
     IsUnlocked: 0
-  - Title: Unlock Manager
+  - Title: Manager
+    Description: Sekarang Anda adalah Manager
     Type: 0
     Value: Manager
     IsUnlocked: 0
+  - Title: King Of Click
+    Description: Sekarang Anda adalah rajanya ngeklik
+    Type: 0
+    Value: King Of Click
+    IsUnlocked: 0
+  - Title: King Of Gabut
+    Description: Sekarang Anda adalah orang gabut
+    Type: 0
+    Value: King Of Gabut
+    IsUnlocked: 0
+  achievementSound: {fileID: 1058408686}
+--- !u!1 &1058408684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058408685}
+  - component: {fileID: 1058408686}
+  m_Layer: 0
+  m_Name: Achievement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058408685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058408684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1831228911}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1058408686
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058408684}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eeae79e2e5c22da4095fd5060ca877b9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1080699428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1078,7 +1225,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -1210,20 +1357,28 @@ MonoBehaviour:
   ResourcesConfigs:
   - Name: Click
     UnlockCost: 0
-    UpgradeCost: 1
-    Output: 2
-  - Name: Pegawai Magang
-    UnlockCost: 100
-    UpgradeCost: 100
-    Output: 200
-  - Name: Pegawai Tetap
+    UpgradeCost: 25
+    Output: 10
+  - Name: Intern
+    UnlockCost: 200
+    UpgradeCost: 200
+    Output: 75
+  - Name: Developer
     UnlockCost: 10000
-    UpgradeCost: 10000
-    Output: 20000
+    UpgradeCost: 5000
+    Output: 500
   - Name: Manager
     UnlockCost: 100000
-    UpgradeCost: 100000
-    Output: 200000
+    UpgradeCost: 50000
+    Output: 5000
+  - Name: King Of Click
+    UnlockCost: 10000000
+    UpgradeCost: 5000000
+    Output: 500000
+  - Name: King Of Gabut
+    UnlockCost: 1000000000
+    UpgradeCost: 500000000
+    Output: 50000000
   ResourcesSprites:
   - {fileID: 21300000, guid: efb35316fe6bf7a43883a6da3d792102, type: 3}
   - {fileID: 21300000, guid: 808ccaa9e19e2b74ca1690f0c150044c, type: 3}
@@ -1235,9 +1390,6 @@ MonoBehaviour:
   CoinIcon: {fileID: 1518402219}
   GoldInfo: {fileID: 1886825620}
   AutoCollectInfo: {fileID: 392585230}
-  _activeResources: []
-  _tapTextPool: []
-  _collectSecond: 2
 --- !u!1 &1270174717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00000032143694, y: 0.000009564298}
+  m_AnchoredPosition: {x: -0.00000032143694, y: -0.0000019728316}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1270174719
@@ -1364,7 +1516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.13697046, g: 0.22311717, b: 0.3584906, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1923,8 +2075,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 226576239}
   m_HandleRect: {fileID: 226576238}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1968,6 +2120,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758810859}
   m_CullTransparentMesh: 0
+--- !u!1 &1831228910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831228911}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1831228911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831228910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 436.86835, y: 147.30984, z: -4.125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2081081359}
+  - {fileID: 1058408685}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886825618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,7 +2202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2168,14 +2352,14 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081081357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 4.125}
   m_LocalScale: {x: 0.58984375, y: 0.58984375, z: 0.58984375}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1831228911}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 384, y: 269.56293}
+  m_AnchoredPosition: {x: -52.868347, y: 122.25308}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

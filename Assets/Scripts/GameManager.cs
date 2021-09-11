@@ -3,6 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Fungsi System.Serializable adalah agar object bisa di-serialize dan
+
+// value dapat di-set dari inspector
+
+[System.Serializable]
+
+public struct ResourceConfig
+
+{
+
+    public string Name;
+
+    public double UnlockCost;
+
+    public double UpgradeCost;
+
+    public double Output;
+
+}
+
 public class GameManager : MonoBehaviour
 {
 
@@ -33,9 +53,9 @@ public class GameManager : MonoBehaviour
     public Text GoldInfo;
     public Text AutoCollectInfo;
 
-    public List<ResourceController> _activeResources = new List<ResourceController>();
-    public List<TapText> _tapTextPool = new List<TapText>();
-    public float _collectSecond;
+    private List<ResourceController> _activeResources = new List<ResourceController>();
+    private List<TapText> _tapTextPool = new List<TapText>();
+    private float _collectSecond;
 
     //public double _totalGold;
 
@@ -64,7 +84,7 @@ public class GameManager : MonoBehaviour
         CoinIcon.transform.Rotate(0f, 0f, Time.deltaTime * -100f);
     }
 
-    public void AddAllResources()
+    private void AddAllResources()
     {
         bool showResources = true;
         foreach(ResourceConfig config in ResourcesConfigs)
@@ -96,7 +116,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckResourceCost()
+    private void CheckResourceCost()
     {
         foreach (ResourceController resource in _activeResources)
         {
@@ -114,7 +134,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CollectPerSecond()
+    private void CollectPerSecond()
     {
         double output = 0;
         foreach(ResourceController resource in _activeResources)
@@ -160,7 +180,7 @@ public class GameManager : MonoBehaviour
         AddGold(output);
     }
 
-    public TapText GetOrCreateTapText()
+    private TapText GetOrCreateTapText()
     {
         TapText tapText = _tapTextPool.Find(t => !t.gameObject.activeSelf);
         if(tapText == null)
@@ -171,24 +191,4 @@ public class GameManager : MonoBehaviour
 
         return tapText;
     }
-}
-
-// Fungsi System.Serializable adalah agar object bisa di-serialize dan
-
-// value dapat di-set dari inspector
-
-[System.Serializable]
-
-public struct ResourceConfig
-
-{
-
-    public string Name;
-
-    public double UnlockCost;
-
-    public double UpgradeCost;
-
-    public double Output;
-
 }

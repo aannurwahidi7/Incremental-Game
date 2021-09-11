@@ -11,12 +11,13 @@ public class ResourceController : MonoBehaviour
     public Text ResourceDescription;
     public Text ResourceUpgradeCost;
     public Text ResourceUnlockCost;
-    public ResourceConfig _config;
-    public int _level = 1;
+
+    private ResourceConfig _config;
+    private int _level = 1;
 
     public bool IsUnlocked { get; private set; }
 
-    void Start()
+    private void Start()
     {
         ResourceButton.onClick.AddListener(() =>
         {            

@@ -14,7 +14,7 @@ public class AchievementController : MonoBehaviour
     {
         get
         {
-            if(_instance != null)
+            if(_instance == null)
             {
                 _instance = FindObjectOfType<AchievementController>();
             }
@@ -24,20 +24,16 @@ public class AchievementController : MonoBehaviour
     }
 
     [SerializeField] private Transform _popUpTransform;
-    [SerializeField] private Text _popUpText;
+    [SerializeField] private Text _popUpTitle;
+    [SerializeField] private Text _popUpDesc;
     [SerializeField] private float _popUpShowDuration = 3f;
     [SerializeField] private List<AchievementData> _achievementList;
 
     private float _popUpShowDurationCounter;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource achievementSound;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (_popUpShowDurationCounter > 0)
         {
@@ -59,14 +55,16 @@ public class AchievementController : MonoBehaviour
         AchievementData achievement = _achievementList.Find(a => a.Type == type && a.Value == value);
         if (achievement != null && !achievement.IsUnlocked)
         {
-            achievement.IsUnlocked = true;
+            achievement.IsUnlocked = true;           
             ShowAchivementPopUp(achievement);
         }
     }
 
     private void ShowAchivementPopUp(AchievementData achievement)
     {
-        _popUpText.text = achievement.Title;
+        achievementSound.Play();
+        _popUpTitle.text = "Achievement Unlocked: " + achievement.Title;
+        _popUpDesc.text = achievement.Description;
         _popUpShowDurationCounter = _popUpShowDuration;
         _popUpTransform.localScale = Vector2.right;
     }
@@ -80,6 +78,7 @@ public class AchievementController : MonoBehaviour
 public class AchievementData
 {
     public string Title;
+    public string Description;
     public AchievementType Type;
     public string Value;
     public bool IsUnlocked;
@@ -88,5 +87,4 @@ public class AchievementData
 public enum AchievementType
 {
     UnlockResource,
-    GoldClicker
 }
