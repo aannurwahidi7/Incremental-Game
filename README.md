@@ -4,3 +4,6 @@
 - Firebase SDK tidak dimasukkan karena terlalu besar
 - Buat dua repository satunya lagi di gitlab
 - Repository ini untuk Wiki karena cukup mudah penggunaannya
+
+Nama : Aan Nur Wahidi
+ID Agate : 201
